@@ -1,0 +1,46 @@
+section{
+	width: 1000px;
+	margin: auto;
+}
+.textarea{
+	margin: 20px 0;
+}
+textarea{
+	width: 100%;
+	height: 120px;
+	resize: none;
+}
+.cont{
+	height: auto;
+	border-bottom: 1px solid #5db3c3;
+	margin-top: 10px;
+}
+.one{
+	padding: 0;
+}
+.btn{
+	width: 120px;
+    background: #6dcc71;
+    color: #fff;
+    float: right;
+}
+.btn:hover{
+	color: #fff;
+}
+img{
+	border-radius: 100%;
+	width: 100px;
+    height: 100px;
+}
+.two{
+	color: #d4a3a3;
+}
+.three{
+	margin-bottom: 5px;
+}
+.content{
+	height: auto;
+}
+.con_back{
+	height: 30px;
+}
