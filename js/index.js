@@ -1,20 +1,6 @@
-//评论提交
-$(".btn_send").on('click',function(){
-	function time(s) {
-	    return s < 10 ? '0' + s: s;
-	}
 
-	var myDate = new Date();
-	//获取当前年
-	var year=myDate.getFullYear();
-	//获取当前月
-	var month=myDate.getMonth()+1;
-	//获取当前日
-	var date=myDate.getDate(); 
-	var h=myDate.getHours();       //获取当前小时数(0-23)
-	var m=myDate.getMinutes();     //获取当前分钟数(0-59)
-	var s=myDate.getSeconds();  
-	var now=year+'-'+time(month)+"-"+time(date)+" "+time(h)+':'+time(m)+":"+time(s);
+$(".btn_send").on('click',function(){
+	var now = time()
 	//获取评论信息
 	var text_send = $("#text_send").val();
 	if(text_send == ""){
@@ -55,21 +41,10 @@ $(".btn_send").on('click',function(){
 
 $(".content_text").show();
 $(".tent_info").on('click','.btn_back',function(){
-	function time(s) {
-	    return s < 10 ? '0' + s: s;
-	}
+	
+	var back_time = time()
 
-	var myDate = new Date();
-	//获取当前年
-	var year=myDate.getFullYear();
-	//获取当前月
-	var month=myDate.getMonth()+1;
-	//获取当前日
-	var date=myDate.getDate(); 
-	var h=myDate.getHours();       //获取当前小时数(0-23)
-	var m=myDate.getMinutes();     //获取当前分钟数(0-59)
-	var s=myDate.getSeconds();  
-	var back_time=year+'-'+time(month)+"-"+time(date)+" "+time(h)+':'+time(m)+":"+time(s);
+	
 	//获取评论信息
 	var con_back = $(this).parent().parent().parent().find("#con_back").val();
 	if(con_back == ""){
@@ -85,3 +60,21 @@ $(".tent_info").on('click','.btn_back',function(){
 	$(this).parent().parent().parent().find(".reply-list").append(html_back);
 	$(this).parent().parent().parent().find("#con_back").val("");
 })
+
+//评论提交
+function time(){
+	function time(s) {
+	    return s < 10 ? '0' + s: s;
+	}
+	var myDate = new Date();
+	//获取当前年
+	var year=myDate.getFullYear();
+	//获取当前月
+	var month=myDate.getMonth()+1;
+	//获取当前日
+	var date=myDate.getDate(); 
+	var h=myDate.getHours();       //获取当前小时数(0-23)
+	var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+	var s=myDate.getSeconds();  
+	return year+'-'+time(month)+"-"+time(date)+" "+time(h)+':'+time(m)+":"+time(s);
+}
